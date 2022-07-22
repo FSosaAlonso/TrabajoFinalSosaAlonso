@@ -18,6 +18,7 @@ Se realizan herencias de padre a hijo renderizando las vistas en la plantilla ut
 
 Encontraremos una primera vista general de la página web
 
+
 ## Archivos py:
 
 #### models.py
@@ -36,9 +37,11 @@ Son las vistas creadas a partir de nuestros modelos y formularios para navegar p
 
 Ubicación de las rutas utilizadas en el proyecto
 
+
 ## "Podes buscar un producto"
 
 Es posible buscar productos, el programa consultará a nuestra base de datos si existe; de ser así, devolerá el producto buscado y el objeto al cual pertenece.
+
 
 
 ## Pasos para crear este proyecto. 
@@ -80,6 +83,7 @@ Se crea el modelo avatar y se adapta a cada vista creada.
 Se realizan pruebas en la página web y sitio de administración, se confirma su completo y correcto funcionamiento.
 
 Se sube el repositorio a GitHub.
+
 
 
 ## Autor
