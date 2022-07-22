@@ -12,6 +12,7 @@ Se realizan herencias de padre a hijo renderizando las vistas en la plantilla ut
 
 ## Vista Previa
 
+[![Alt text](https://img.youtube.com/vi/yTI6dsJ3Nlg/0.jpg)](https://www.youtube.com/watch?v=yTI6dsJ3Nlg)
 
 ## Inicio
 
@@ -54,7 +55,7 @@ Se indica por consola que se creará una base de datos (python manage.py migrate
 
 Se descarga la plantilla bootstrap elegida, se realizan adaptaciones dentro de una carpeta llamada static de la aplicación (“App”) y se adapta el inicio al padre que heredarán sus hijos.
 
-Se programan las views del proyecto, se realiza CRUD del modelo “proveedores” y se crean listas para mostrar los datos de los otros modelos.
+Se programan las views del proyecto y se realiza CRUD del modelo “proveedores”.
 
 Se cargan las plantillas html para visualizar nuestro proyecto en la web, dentro de la carpeta “templates” de la aplicación (“App”).
 
