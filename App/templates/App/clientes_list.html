@@ -1,0 +1,33 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes_List</title>
+</head>
+
+<body>
+    <h1 style="color:rgb(255, 255, 255)"> Clientes </h1>
+    <ul style="color:rgb(255, 255, 255)">
+        {% for cliente in object_list %}
+            <li>
+                <p style="color:rgb(255, 255, 255)"> Nombre: {{cliente.nombre}}</p>
+                <p style="color:rgb(255, 255, 255)"> Apellido: {{cliente.apellido}}</p>
+                <p style="color:rgb(255, 255, 255)"> Día que compro: {{cliente.fechafactura}}</p>
+                <p style="color:rgb(255, 255, 255)"> Telefono: {{cliente.telefono}}</p>
+              
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
+
+{% endblock %}

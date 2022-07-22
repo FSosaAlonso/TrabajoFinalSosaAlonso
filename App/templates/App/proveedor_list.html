@@ -1,0 +1,35 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedor_List</title>
+</head>
+
+<body>
+    <h1 style="color:rgb(255, 255, 255)"> Proveedores </h1>
+    <ul style="color:rgb(255, 255, 255)">
+        {% for proveedor in object_list %}
+            <li>
+                <p style="color:rgb(255, 255, 255)"> Nombre: {{proveedor.razonsocial}}</p>
+                <p>
+                    <a style="color:rgb(255, 255, 255)" href="{% url 'Detail' proveedor.id %}"> Ver </a>
+                    <a style="color:rgb(255, 255, 255)" href="{% url 'Edit' proveedor.id %}"> Editar </a>
+                    <a style="color:rgb(255, 255, 255)" href="{% url 'Delete' proveedor.id %}"> Borrar </a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a style="color:rgb(255, 255, 255)" href="{% url 'New' %}">Nuevo Proveedor</a>
+</body>
+</html>
+
+{% endblock %}

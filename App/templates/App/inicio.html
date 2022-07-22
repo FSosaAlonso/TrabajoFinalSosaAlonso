@@ -1,0 +1,70 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+
+   <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'App/img/principal.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">La estructura que necesitas en un solo lugar</span>
+          </h2>
+          <p class="mb-3">Empezá un negocio para hacer una diferencia.</p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div>
+    <h1 style="background-color: rgba(255, 255, 255, 0.918);" > {{mensaje}}</h1>
+    
+    <h2 style="color:rgb(255, 255, 255)"> Podes buscar un producto: </h2>
+    <form action="buscar/" method="GET">
+  
+        <input type="text" name="proveedores">
+        <input type="submit" value="Buscar">
+  
+    </form>
+  
+      {% if proveedores %}
+  
+        {% for proveedor in proveedores %}
+        
+        <p style="color:rgb(255, 255, 255)"> Estamos buscando el producto: {{productos}}</p>
+  
+            <h2 style="color:rgb(255, 255, 255)"> El producto encontrado es: {{proveedor.productos}}</h2>
+            <p style="color:rgb(255, 255, 255)"> <br> Pertenece al proveedor: {{proveedor.razonsocial}}</p>
+            <p style="color:rgb(255, 255, 255)">Su contacto es: {{proveedor.telefono}}</p>
+        {% endfor %}
+      {% else %}
+        <p style="color:rgb(255, 255, 255)"> No se encontró el producto buscado: {{productos}}</p>
+      
+      {% endif %}
+  
+  </div>
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Si  trabajas por tus sueños, alguien te contratará para que trabajes por los suyos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
