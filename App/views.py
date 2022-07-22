@@ -54,18 +54,6 @@ def empleados(request):
 
     return render(request, "App/empleados.html", {"miFormulario":miFormulario, "url":avatares[0].imagen.url})
 
-class EmpleadoList(LoginRequiredMixin, ListView):
-    
-    model = Empleados
-    template_name = "App/empleado_list.html"
-    
-    def empleadolist(request):
-        
-        avatares = Avatar.objects.filter(user=request.user.id)
-        
-        return render(request, "App/empleado_list.html", {"url":avatares[0].imagen.url})
-
-
 
 def proveedores(request):
     
@@ -81,7 +69,7 @@ def proveedores(request):
 
             info = miFormulario.cleaned_data
             
-            empleado = Proveedores(razonsocial=info['razonsocial'], productos=info['productos'], telefono=info['telefono'])
+            empleado = Proveedores(razonsocial=info['razonsocial'], productos=info['productos'], telefono=info['telefono'], email=info['email'])
             empleado.save()
 
             return render(request, "App/inicio.html", {"url":avatares[0].imagen.url})
@@ -108,13 +96,13 @@ class ProveedorCreacion(CreateView):
     
     model = Proveedores
     success_url = "/proveedor/list"
-    fields = ['razonsocial', 'productos', 'telefono']
+    fields = ['razonsocial', 'productos', 'telefono', 'email']
 
 class ProveedorUpdate(UpdateView):
     
     model = Proveedores
     success_url = "/proveedor/list"
-    fields = ['razonsocial', 'productos', 'telefono']
+    fields = ['razonsocial', 'productos', 'telefono', 'email']
 
 class ProveedorDelete(DeleteView):
     
@@ -147,16 +135,6 @@ def clientes(request):
         miFormulario = ClientesForm()
 
     return render(request, "App/clientes.html", {"miFormulario":miFormulario, "url":avatares[0].imagen.url})
-
-class ClienteList(LoginRequiredMixin, ListView):
-    
-    model = Clientes
-    template_name = "App/clientes_list.html"
-    
-    def clientelist(request):
-        
-        return render(request, "App/clientes_list.html")
-
 
 
 def buscar(request):

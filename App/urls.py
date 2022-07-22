@@ -16,9 +16,6 @@ urlpatterns = [
     path(r'^editar/(?P<pk>\d+)$', views.ProveedorUpdate.as_view(), name='Edit'),
     path(r'^borrar/(?P<pk>\d+)$', views.ProveedorDelete.as_view(), name='Delete'),
 
-    path('cliente/list', views.ClienteList.as_view(), name='List'),
-    path('empleado/list', views.EmpleadoList.as_view(), name='List'),
-  
     path('login', views.login_request, name='Login'),
     path('register', views.register, name = 'Register'),
     path('logout', LogoutView.as_view(template_name= 'App/logout.html'), name = 'Logout'),
